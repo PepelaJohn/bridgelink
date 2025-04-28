@@ -29,7 +29,7 @@ const services = [
   {
     icon: "🎨",
     title: "UI/UX Design",
-    description: "Intuitive interfaces and engaging user experiences that keep visitors coming back."
+    description: "Intuitive interfaces and engaging user experiences that keep visitors coming back for more."
   },
   {
     icon: "</>",
