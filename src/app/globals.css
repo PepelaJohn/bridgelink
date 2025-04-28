@@ -24,3 +24,29 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+button{
+  cursor: pointer;
+}
+
+ 
+.container-pattern {
+  width: 100%;
+  height: 100%;
+  background-color: #313131; /* fallback */
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0),
+    linear-gradient(to right, #173e69, #297585, #57acc1);
+  background-size: 30px 30px, cover;
+  background-position: -5px -5px, center;
+}
+
+.container-pattern-white {
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* fallback */
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+  background-size: 30px 30px, cover;
+  background-position: -5px -5px, center;
+}
+
