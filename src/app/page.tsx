@@ -121,9 +121,9 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-50 text-black">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto ">
           <motion.div 
-            className="text-center mb-8"
+            className="text-center  mb-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -135,9 +135,9 @@ export default function Home() {
             </p>
           </motion.div>
           
-          <div className="flex flex-col md:flex-row gap-8">
+          <div className="flex flex-col rounded-lg overflow-hidden md:flex-row ">
             <motion.div 
-              className="bg-gradient-to-r from-[#173e69] via-[#297585]   to-[#57acc1] text-white p-8 rounded-lg md:w-1/3"
+              className="bg-gradient-to-r from-[#173e69] via-[#297585]   to-[#57acc1] text-white p-8  md:w-1/3"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
