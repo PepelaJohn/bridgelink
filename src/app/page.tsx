@@ -135,7 +135,7 @@ export default function Home() {
             </p>
           </motion.div>
           
-          <div className="flex flex-col rounded-lg overflow-hidden md:flex-row ">
+          <div className="flex flex-col min-[660px]:rounded-lg overflow-hidden md:flex-row ">
             <motion.div 
               className="bg-gradient-to-r from-[#173e69] via-[#297585]   to-[#57acc1] text-white p-8  md:w-1/3"
               initial={{ opacity: 0, x: -20 }}
