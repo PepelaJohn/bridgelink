@@ -143,7 +143,7 @@ const ContactForm = () => {
               transition={{ type: "spring", stiffness: 260, damping: 20 }}
               className="mb-6"
             >
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-100 rounded-full mx-auto flex items-center justify-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-100 md:rounded-full mx-auto flex items-center justify-center">
                 <svg
                   className="w-8 h-8 sm:w-10 sm:h-10 text-green-500"
                   fill="none"

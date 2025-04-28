@@ -69,7 +69,7 @@ const PortfolioGrid = () => {
   }, [activeCategory]);
 
   return (
-    <div className="w-full bg-gray-100">
+    <div id="portfolio" className="w-full bg-gray-100">
       <div className="container  mx-auto px-4 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -105,11 +105,7 @@ const PortfolioGrid = () => {
           {categories.map((category) => (
             <motion.button
               key={category}
-              className={`px-3  py-1.5 sm:px-4 sm:py-2 z-3 bg-transparent  text-sm sm:text-base transition duration-300 ${
-                activeCategory === category
-                  ? "bg- text-black shadow-md"
-                  : "text-black"
-              }`}
+              className={`px-3  py-1.5 sm:px-4 sm:py-2 z-3 bg-transparent text-center  text-sm sm:text-base transition duration-300 text-black`}
               onClick={() => setActiveCategory(category)}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
