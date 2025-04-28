@@ -126,7 +126,7 @@ const ContactForm = () => {
             Get in Touch
           </h2>
           <p className="text-gray-600 text-sm sm:text-base">
-            Have a project in mind? Let's discuss how we can help.
+            Have a project in mind? Let&apos;s discuss how we can help.
           </p>
         </motion.div>
 
@@ -164,7 +164,7 @@ const ContactForm = () => {
               Thank You!
             </h3>
             <p className="text-gray-600 max-w-md mx-auto">
-              Your message has been sent successfully. We'll get back to you
+              Your message has been sent successfully. We&apos;ll get back to you
               within 24-48 hours.
             </p>
 
