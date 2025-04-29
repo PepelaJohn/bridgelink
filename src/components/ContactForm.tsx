@@ -111,7 +111,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-white sm:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 relative overflow-hidden">
+    <div className="bg-white  shadow-lg p-4 sm:p-6 md:p-8 relative overflow-hidden">
       {/* Background pattern for visual interest */}
       <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-50 to-teal-50 rounded-full -mr-20 -mt-20 opacity-70"></div>
       <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-blue-50 to-teal-50 rounded-full -ml-16 -mb-16 opacity-70"></div>
@@ -143,7 +143,7 @@ const ContactForm = () => {
               transition={{ type: "spring", stiffness: 260, damping: 20 }}
               className="mb-6"
             >
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-100 rounded-full mx-auto flex items-center justify-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-100 md:rounded-full mx-auto flex items-center justify-center">
                 <svg
                   className="w-8 h-8 sm:w-10 sm:h-10 text-green-500"
                   fill="none"

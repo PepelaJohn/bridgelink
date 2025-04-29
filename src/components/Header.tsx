@@ -79,7 +79,7 @@ const Header = () => {
       {mobileMenuOpen && (
         <motion.div 
           className={`md:hidden bg-white shadow-lg ${
-        scrolled ? 'bg-white shadow-md py-3' : 'bg-gradient-to-r from-[#173e69] via-[#297585]   to-[#57acc1] py-6'
+        scrolled ? 'bg-white shadow-md py-3' : 'container-pattern py-6'
       }`}
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
