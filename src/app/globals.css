@@ -61,8 +61,8 @@ button {
   /* max-width: 80vw; */
 }
 
-@media (min-width:1280px) {
+@media (min-width:720px) {
   .cont{
-    max-width: 80VW;
+    max-width: 80vw;
   }
 }

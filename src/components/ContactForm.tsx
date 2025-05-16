@@ -81,7 +81,7 @@ const ContactForm = () => {
     try {
       // Prepare email data for the API
       const emailData = {
-        to: "victorbwire3d@gmail.com", // You can set a default or use env variable
+        to: "pepelajahy@gmail.com", // You can set a default or use env variable
         subject: `Contact Form: ${formData.subject}`,
         text: `
           Name: ${formData.fullName}
@@ -94,7 +94,7 @@ const ContactForm = () => {
       };
 
       // Send form data to API route
-      const response = await fetch('/api/email', {
+      const response = await fetch('/netlify/functions/sendEmail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

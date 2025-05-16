@@ -195,7 +195,7 @@ export default function Home() {
       </motion.div>
       
       <motion.div
-        className="bg-white p-8 md:w-2/3"
+        className="bg-white  p-0 md:p-8 md:w-2/3"
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
