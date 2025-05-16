@@ -9,7 +9,7 @@ const HeroSection = () => {
   
   return (
     <section className="bg-gradient-to-r from-[#173e69] via-[#297585] to-[#57acc1] container-pattern  text-white min-h-screen flex flex-col justify-center py-12 sm:py-16 md:py-20 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center">
+      <div className="cont mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center">
         {/* Text Content */}
         <motion.div 
           className="lg:w-1/2 w-full mb-10 lg:mb-0 lg:pr-12"
@@ -55,7 +55,7 @@ const HeroSection = () => {
           </div>
         </motion.div>
         
-        {/* Image Container */}
+        {/* Image cont */}
         <motion.div 
           className="lg:w-1/2 w-full"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -118,7 +118,7 @@ const HeroSection = () => {
       
       {/* Scroll indicator */}
       <motion.div 
-        className="container mx-auto text-center mt-8 sm:mt-12"
+        className="cont mx-auto text-center mt-8 sm:mt-12"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}

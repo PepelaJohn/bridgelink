@@ -26,7 +26,7 @@ const Header = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="container mx-auto px-4 flex justify-between items-center">
+      <div className="cont mx-auto px-4 flex justify-between items-center">
         <Link href="/">
           <span className="flex items-center">
             <span className={`font-bold text-xl ${scrolled ? 'text-blue-900' : 'text-white'}`}>
@@ -86,7 +86,7 @@ const Header = () => {
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="container mx-auto px-4 py-4">
+          <div className="cont mx-auto px-4 py-4">
             {['Home', 'Services', 'Portfolio', 'Contact'].map((item) => (
               <Link key={item} href={item === 'Home' ? '/' : `#${item.toLowerCase()}`}>
                 <span 

@@ -70,7 +70,7 @@ const PortfolioGrid = () => {
 
   return (
     <div id="portfolio" className="w-full bg-gray-100">
-      <div className="container  mx-auto px-4 py-16">
+      <div className="cont  mx-auto px-4 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

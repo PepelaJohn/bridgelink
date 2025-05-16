@@ -1,4 +1,4 @@
-// File: pages/index.tsx
+// File: app/page.tsx
 'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -68,7 +68,7 @@ export default function Home() {
 
       {/* Services Section */}
       <section id="services" className="py-20 text-black container-pattern-white bg--50">
-        <div className="container mx-auto px-4">
+        <div className="cont mx-auto px-4">
           <motion.div 
             className="text-center mb-16"
             initial="hidden"
@@ -120,8 +120,9 @@ export default function Home() {
       <PortfolioGrid></PortfolioGrid>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50 text-black">
-        <div className="container mx-auto ">
+      <section id="contact" className="py-20 bg-gray-50 relative text-black">
+        
+        <div className="cont mx-auto ">
           <motion.div 
             className="text-center  mb-8"
             initial="hidden"
