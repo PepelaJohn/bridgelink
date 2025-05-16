@@ -9,23 +9,7 @@ const HeroSection = () => {
   // Primary orange color: #f38031
 
 
-  const images = [
-  {
-    id:0,
-    image:'/images/social-media.png',
-    description: 'Amplifying Your Brand Online'
-  },
-  {
-    id:1,
-    image:'/images/ui-ux.png',
-    description: 'Amplifying Your Brand Online'
-  },
-  {
-    id:2,
-    image:'/images/webdev.png',
-    description: 'Amplifying Your Brand Online'
-  },
-  ]
+
   
   return (
     <section className="bg-white  container-pattern text-white min-h-screen flex flex-col justify-center py-12 sm:py-16 md:py-20 overflow-hidden">
