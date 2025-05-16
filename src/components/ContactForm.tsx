@@ -1,4 +1,3 @@
-// File: components/ContactForm.tsx
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
@@ -14,6 +13,7 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validateField = (name: string, value: string) => {
     if (!value.trim()) {
@@ -58,8 +58,9 @@ const ContactForm = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
 
     // Validate all fields before submission
     const newErrors: { [key: string]: string } = {};
@@ -77,11 +78,38 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
+    try {
+      // Prepare email data for the API
+      const emailData = {
+        to: "victorbwire3d@gmail.com", // You can set a default or use env variable
+        subject: `Contact Form: ${formData.subject}`,
+        text: `
+          Name: ${formData.fullName}
+          Email: ${formData.email}
+          Subject: ${formData.subject}
+          
+          Message:
+          ${formData.message}
+        `
+      };
 
+      // Send form data to API route
+      const response = await fetch('/api/email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message');
+      }
+
+      setIsSubmitted(true);
+      
       // Reset form after showing success message
       setTimeout(() => {
         setIsSubmitted(false);
@@ -92,7 +120,12 @@ const ContactForm = () => {
           message: "",
         });
       }, 3000);
-    }, 1500);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitError(error instanceof Error ? error.message : 'An unexpected error occurred');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const formVariants = {
@@ -111,10 +144,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-white  shadow-lg p-4 sm:p-6 md:p-8 relative overflow-hidden">
-      {/* Background pattern for visual interest */}
-      <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-50 to-teal-50 rounded-full -mr-20 -mt-20 opacity-70"></div>
-      <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-blue-50 to-teal-50 rounded-full -ml-16 -mb-16 opacity-70"></div>
+    <div className="bg-white shadow-lg p-4 sm:p-6 md:p-8 relative overflow-hidden">
+      {/* Background pattern for visual interest - updated to orange theme */}
+      <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-orange-50 to-amber-50 rounded-full -mr-20 -mt-20 opacity-70"></div>
+      <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-orange-50 to-amber-50 rounded-full -ml-16 -mb-16 opacity-70"></div>
 
       <div className="relative">
         <motion.div
@@ -143,7 +176,7 @@ const ContactForm = () => {
               transition={{ type: "spring", stiffness: 260, damping: 20 }}
               className="mb-6"
             >
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-100 md:rounded-full mx-auto flex items-center justify-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-100 rounded-full mx-auto flex items-center justify-center">
                 <svg
                   className="w-8 h-8 sm:w-10 sm:h-10 text-green-500"
                   fill="none"
@@ -170,7 +203,7 @@ const ContactForm = () => {
 
             <motion.button
               onClick={() => setIsSubmitted(false)}
-              className="mt-6 text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center mx-auto"
+              className="mt-6 text-orange-600 hover:text-orange-800 text-sm font-medium flex items-center mx-auto"
               whileHover={{ x: -3 }}
             >
               <svg
@@ -233,7 +266,7 @@ const ContactForm = () => {
                     className={`w-full pl-10 pr-4 py-2.5 border ${
                       formErrors.fullName
                         ? "border-red-400 focus:ring-red-300"
-                        : "border-gray-300 focus:ring-blue-400"
+                        : "border-gray-300 focus:ring-orange-300"
                     } rounded-lg focus:outline-none focus:ring-2 text-gray-700 text-sm sm:text-base transition-colors`}
                     placeholder="John Doe"
                   />
@@ -279,7 +312,7 @@ const ContactForm = () => {
                     className={`w-full pl-10 pr-4 py-2.5 border ${
                       formErrors.email
                         ? "border-red-400 focus:ring-red-300"
-                        : "border-gray-300 focus:ring-blue-400"
+                        : "border-gray-300 focus:ring-orange-300"
                     } rounded-lg focus:outline-none focus:ring-2 text-gray-700 text-sm sm:text-base transition-colors`}
                     placeholder="john@example.com"
                   />
@@ -326,7 +359,7 @@ const ContactForm = () => {
                   className={`w-full pl-10 pr-4 py-2.5 border ${
                     formErrors.subject
                       ? "border-red-400 focus:ring-red-300"
-                      : "border-gray-300 focus:ring-blue-400"
+                      : "border-gray-300 focus:ring-orange-300"
                   } rounded-lg focus:outline-none focus:ring-2 text-gray-700 text-sm sm:text-base transition-colors`}
                   placeholder="How can we help you?"
                 />
@@ -356,7 +389,7 @@ const ContactForm = () => {
                   className={`w-full px-4 py-3 border ${
                     formErrors.message
                       ? "border-red-400 focus:ring-red-300"
-                      : "border-gray-300 focus:ring-blue-400"
+                      : "border-gray-300 focus:ring-orange-300"
                   } rounded-lg focus:outline-none focus:ring-2 text-gray-700 text-sm sm:text-base transition-colors`}
                   placeholder="Tell us about your project or inquiry..."
                 />
@@ -384,10 +417,19 @@ const ContactForm = () => {
               )}
             </motion.div>
 
+            {submitError && (
+              <motion.div 
+                variants={itemVariants}
+                className="p-3 bg-red-50 border border-red-200 rounded-lg"
+              >
+                <p className="text-red-600 text-sm">{submitError}</p>
+              </motion.div>
+            )}
+
             <motion.div variants={itemVariants} className="pt-2">
               <motion.button
                 type="submit"
-                className="w-full bg-gradient-to-r from-[#173e69] via-[#297585] to-[#57acc1] text-white font-medium py-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex items-center justify-center"
+                className="w-full bg-primaryOrange text-white font-medium py-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex items-center justify-center"
                 whileHover={{
                   scale: 1.01,
                   boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",

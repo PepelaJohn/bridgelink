@@ -6,19 +6,39 @@ const HeroSection = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
+  // Primary orange color: #f38031
+
+
+  const images = [
+  {
+    id:0,
+    image:'/images/social-media.png',
+    description: 'Amplifying Your Brand Online'
+  },
+  {
+    id:1,
+    image:'/images/ui-ux.png',
+    description: 'Amplifying Your Brand Online'
+  },
+  {
+    id:2,
+    image:'/images/webdev.png',
+    description: 'Amplifying Your Brand Online'
+  },
+  ]
   
   return (
-    <section className="bg-gradient-to-r from-[#173e69] via-[#297585] to-[#57acc1] container-pattern  text-white min-h-screen flex flex-col justify-center py-12 sm:py-16 md:py-20 overflow-hidden">
-      <div className="cont mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center">
+    <section className="bg-white  container-pattern text-white min-h-screen flex flex-col justify-center py-12 sm:py-16 md:py-20 overflow-hidden">
+      <div className="cont mx-auto px-4  sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center">
         {/* Text Content */}
         <motion.div 
-          className="lg:w-1/2 w-full mb-10 lg:mb-0 lg:pr-12"
+          className="lg:w-1/2 w-full  mb-10 lg:mb-0 lg:pr-12"
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
         >
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 tracking-tight leading-tight">
-            Elevate Your <span className="text-teal-200 inline-block">Digital Presence</span>
+            Elevate Your <span className="text-amber-200 inline-block">Digital Presence</span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl opacity-90 mb-6 sm:mb-8 max-w-xl">
             We create stunning websites and strategic social media campaigns that help your business connect with customers and grow online.
@@ -26,7 +46,7 @@ const HeroSection = () => {
           <div className="flex flex-wrap gap-3 sm:gap-4">
             <motion.a 
               href="#portfolio" 
-              className="bg-white text-black px-2 sm:px-4 h-8 justify-center flex items-center uppercase rounded-lg font-medium transition duration-300 text-sm hover:shadow-lg"
+              className="bg-white text-orange-600 px-2 sm:px-4 h-8 justify-center flex items-center uppercase rounded-lg font-medium transition duration-300 text-sm hover:shadow-lg"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
@@ -34,11 +54,11 @@ const HeroSection = () => {
             </motion.a>
             <motion.a 
               href="#contact" 
-              className="border-2 border-white text-white px-2 sm:px-4 h-8 flex content-center rounded-lg font-medium hover:bg-white/10 transition duration-300 uppercase text-sm  items-center gap-1 sm:gap-2 "
+              className="border-2 border-white text-white px-2 sm:px-4 h-8 flex content-center rounded-lg font-medium hover:bg-white/10 transition duration-300 uppercase text-sm items-center gap-1 sm:gap-2"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
-              Get in Touch <span className="ml-1 text-teal-200">→</span>
+              Get in Touch <span className="ml-1 text-amber-200">→</span>
             </motion.a>
           </div>
           
@@ -46,7 +66,7 @@ const HeroSection = () => {
           <div className="flex items-center gap-4 mt-8 lg:hidden">
             <div className="flex -space-x-2">
               {[1, 2, 3].map((i) => (
-                <div key={i} className={`w-8 h-8 rounded-full bg-gradient-to-r from-teal-300 to-blue-300 border-2 border-white flex items-center justify-center text-xs font-bold`}>
+                <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-r from-amber-300 to-orange-400 border-2 border-white flex items-center justify-center text-xs font-bold">
                   {i}
                 </div>
               ))}
@@ -55,14 +75,14 @@ const HeroSection = () => {
           </div>
         </motion.div>
         
-        {/* Image cont */}
+        {/* Image container */}
         <motion.div 
           className="lg:w-1/2 w-full"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="relative bg-gradient-to-tr from-blue-900/30 to-transparent p-2 sm:p-3 rounded-xl shadow-2xl backdrop-blur-sm">
+          <div className="relative rounded-xl backdrop-blur-sm">
             <div className="relative aspect-video overflow-hidden rounded-lg">
               <Image 
                 src="/images/hero.jpg" 
@@ -73,12 +93,12 @@ const HeroSection = () => {
                 layout="responsive"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-orange-900/40 to-transparent"></div>
             </div>
             
             {/* Floating UI elements for visual interest */}
             <motion.div 
-              className="absolute -top-4 -right-4 bg-white/90 text-blue-900 px-3 py-2 rounded-lg shadow-lg text-sm font-medium hidden sm:flex items-center"
+              className="absolute -top-4 -right-4 bg-white/90 text-orange-600 px-3 py-2 rounded-lg text-sm font-medium hidden sm:flex items-center"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.5 }}
@@ -86,15 +106,7 @@ const HeroSection = () => {
               <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
               Live Projects: 28+
             </motion.div>
-            
-            <motion.div 
-              className="absolute -bottom-3 -left-3 bg-teal-200/90 text-blue-900 px-3 py-2 rounded-lg shadow-lg text-sm font-medium hidden sm:block"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 1, duration: 0.5 }}
-            >
-              100% Satisfaction Rate
-            </motion.div>
+           
           </div>
         </motion.div>
         
@@ -107,7 +119,7 @@ const HeroSection = () => {
         >
           <div className="flex -space-x-3">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className={`w-10 h-10 rounded-full bg-gradient-to-r from-teal-300 to-blue-300 border-2 border-white flex items-center justify-center text-sm font-bold`}>
+              <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-r from-amber-300 to-orange-400 border-2 border-white flex items-center justify-center text-sm font-bold">
                 {i}
               </div>
             ))}
@@ -118,7 +130,7 @@ const HeroSection = () => {
       
       {/* Scroll indicator */}
       <motion.div 
-        className="cont mx-auto text-center mt-8 sm:mt-12"
+        className="cont mx-auto text-center absolute bottom-4 left-[50%] -translate-X-[50%]  mt-8 sm:mt-12"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}

@@ -29,8 +29,8 @@ const Header = () => {
       <div className="cont mx-auto px-4 flex justify-between items-center">
         <Link href="/">
           <span className="flex items-center">
-            <span className={`font-bold text-xl ${scrolled ? 'text-blue-900' : 'text-white'}`}>
-              Bridge<span className="text-teal-400">link</span>
+            <span className={`font-bold text-xl ${scrolled ? 'text-black' : 'text-white'}`}>
+              Bridge<span className="text-primaryOrange">link</span>
             </span>
           </span>
         </Link>
@@ -48,7 +48,7 @@ const Header = () => {
           ))}
           <motion.a 
             href="#contact"
-            className="bg-gradient-to-r from-[#173e69] via-[#297585] to-[#57acc1] text-white px-5 py-2 rounded  transition duration-300"
+            className="bg-primaryOrange text-white px-5 py-2 rounded  transition duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
