@@ -17,7 +17,7 @@ const HeroSection = () => {
           animate="visible"
           variants={fadeInUp}
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 tracking-tight leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 tracking-tight leading-tight">
             Elevate Your <span className="text-teal-200 inline-block">Digital Presence</span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl opacity-90 mb-6 sm:mb-8 max-w-xl">
@@ -26,7 +26,7 @@ const HeroSection = () => {
           <div className="flex flex-wrap gap-3 sm:gap-4">
             <motion.a 
               href="#portfolio" 
-              className="bg-white text-blue-900 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition duration-300 text-sm sm:text-base hover:shadow-lg"
+              className="bg-white text-black px-2 sm:px-4 h-8 justify-center flex items-center uppercase rounded-lg font-medium transition duration-300 text-sm hover:shadow-lg"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
@@ -34,7 +34,7 @@ const HeroSection = () => {
             </motion.a>
             <motion.a 
               href="#contact" 
-              className="border-2 border-white text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-white/10 transition duration-300 flex items-center gap-1 sm:gap-2 text-sm sm:text-base"
+              className="border-2 border-white text-white px-2 sm:px-4 h-8 flex content-center rounded-lg font-medium hover:bg-white/10 transition duration-300 uppercase text-sm  items-center gap-1 sm:gap-2 "
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >

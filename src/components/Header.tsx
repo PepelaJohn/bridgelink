@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <motion.header 
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 text-[1rem] transition-all duration-300 ${
         scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-6'
       }`}
       initial={{ y: -100 }}

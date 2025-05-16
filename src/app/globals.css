@@ -55,7 +55,6 @@ button {
   background-position: -5px -5px, center;
 }
 
-.cont {
-  width: 80%;
-  
+.cont{
+  max-width: 80vw;
 }
