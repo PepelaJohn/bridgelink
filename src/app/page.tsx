@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 import ServiceCard from '../components/ServiceCard';
 import PortfolioGrid from '../components/PortfolioGrid';
 import ContactForm from '../components/ContactForm';
-import HeroSection from '@/components/HeroSection';
+import HeroSection from '@/components/Hero';
 //  --color-primaryOrange: #f38031;
 // Animation variants
 const fadeInUp = {
